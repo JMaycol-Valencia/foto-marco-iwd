@@ -1,0 +1,12 @@
+<div class="contenedor">
+  <div class="image-container">
+    <img *ngIf="imageUrl" [src]="imageUrl" class="user-image">
+    <img src="assets/marco-evento.png" class="marco-image">
+  </div>
+
+  <div class="upload-download-container">
+    <button (click)="triggerFileInput()">Seleccionar imagen</button>
+    <input type="file" id="file-input" accept="image/*" (change)="onFileSelected($event)" hidden>
+    <button *ngIf="imageUrl" (click)="downloadImage()">Descargar imagen</button>
+  </div>
+</div>
